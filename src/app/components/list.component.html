@@ -1,0 +1,12 @@
+<div>
+    <button type="button" mat-raised-button color="accent" (click)="onClickNewRSVP()">Add new RSVP</button>
+    <p>The RSVP list includes:</p>
+    <ul *ngFor="let r of rsvpList">
+        <li>
+            name: {{r.name}},<br>
+            email: {{r.email}},<br>
+            phone: {{r.phone}},<br>
+            status: {{r.status}}
+        </li>
+    </ul>
+</div>

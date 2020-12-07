@@ -1,0 +1,29 @@
+<div style="width: 100%;" [formGroup]="form">
+    <mat-form-field appearance="fill" class="formfield">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name">
+    </mat-form-field>
+    <p></p>
+    <mat-form-field appearance="fill" class="formfield">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email">
+    </mat-form-field>
+    <p></p>
+    <mat-form-field appearance="fill" class="formfield">
+        <mat-label>Phone</mat-label>
+        <input matInput formControlName="phone">
+    </mat-form-field>
+    <p></p>
+    <mat-form-field appearance="fill" class="formfield">
+        <mat-label>Status</mat-label>
+        <mat-select formControlName="status">
+            <mat-option *ngFor="let c of statusResponse" [value]="c">
+                {{c}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <p></p>
+    <button type="button" mat-raised-button color="primary" (click)="onClickSubmit()" [disabled]="form.invalid">Submit</button>
+    &nbsp;|&nbsp;
+    <button type="button" mat-raised-button color="accent" (click)="onClickList()">Go to List</button>
+</div>
